@@ -1,88 +1,111 @@
 <template>
-  <v-card
-    :loading="loading"
-    class="mx-auto my-12"
-    max-width="374"
-  >
-    <template v-slot:loader="{ isActive }">
-      <v-progress-linear
-        :active="isActive"
-        color="deep-purple"
-        height="4"
-        indeterminate
-      ></v-progress-linear>
-    </template>
+  <v-app id="inspire" style="
+    background: url('/bg.png') no-repeat center center fixed !important;
+  background-size: cover;
+  ">
+    <v-app-bar class="px-3" flat density="compact">
+      <v-spacer></v-spacer>
+      <v-tabs centered color="grey-darken-2">
+        <v-tab v-for="link in [
+          'Menu 1',
+          'Sides',
+          'Drinks',
+          'Desserts',
+        ]" :key="link" :text="link"></v-tab>
+      </v-tabs>
+      <v-spacer></v-spacer>
 
-    <v-img
-      cover
-      height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-    ></v-img>
+    </v-app-bar>
 
-    <v-card-item>
-      <v-card-title>Cafe Badilico</v-card-title>
+    <v-main class="bg-grey-lighten-3">
+      <v-container>
+        <div>
+          <v-img height="100"
+            src="https://images.builderservices.io/s/cdn/v1.0/i/m?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-ipage-v1-0-2%2F752%2F533752%2FhworyvZU%2Fcf2734b18d274adc8db306d45ac55a97&methods=resize%2C500%2C5000"></v-img>
+          <v-card class="mx-auto my-12" max-width="374">
+            <template v-slot:loader="{ isActive }">
+              <v-progress-linear :active="isActive" color="deep-purple" height="4" indeterminate></v-progress-linear>
+            </template>
 
-      <v-card-subtitle>
-        <span class="me-1">Local Favorite</span>
+            <v-card-item>
+              <v-tabs v-model="tab" background-color="transparent" color="deep-purple" grow>
+                <v-tab v-for="n in [
+                  {
+                    icon: 'mdi-home',
+                    text: 'Free',
+                    value: 'mdi-home',
+                  },
+                  {
+                    icon: 'mdi-account',
+                    text: 'Login',
+                    value: 'mdi-account',
+                  },
+                  {
+                    icon: 'mdi-ticket-percent',
+                    text: 'Voucher',
+                    value: 'mdi-ticket-percent',
+                  },
+                  {
+                    icon: 'mdi-qrcode',
+                    text: 'QR',
+                    value: 'mdi-qrcode',
+                  }
+                ]" :key="n.icon" :ripple="false" :text="n.text" centered>
+                  <v-icon start v-if="!n.icon == 'mdi-home'">
+                    {{ n.icon }}
+                  </v-icon>
+                  {{ n.text }}
+                </v-tab>
+              </v-tabs>
 
-        <v-icon
-          color="error"
-          icon="mdi-fire-circle"
-          size="small"
-        ></v-icon>
-      </v-card-subtitle>
-    </v-card-item>
+            </v-card-item>
 
-    <v-card-text>
-      <v-row
-        align="center"
-        class="mx-0"
-      >
-        <v-rating
-          :model-value="4.5"
-          color="amber"
-          density="compact"
-          half-increments
-          readonly
-          size="small"
-        ></v-rating>
+            <v-window v-model="tab" an>
+              <v-window-item v-for="n in [
+                {
+                  icon: 'mdi-home',
+                  text: 'Free',
+                },
+                {
+                  icon: 'mdi-account',
+                  text: 'Login',
+                },
+                {
+                  icon: 'mdi-ticket-percent',
+                  text: 'Voucher',
+                },
+                {
+                  icon: 'mdi-qrcode',
+                  text: 'QR',
+                }
+              ]" :key="n.icon">
+                <AuthFree />
+              </v-window-item>
+            </v-window>
 
-        <div class="text-grey ms-4">
-          4.5 (413)
+            <v-card-text>
+             <terms-of-service/>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" text block @click="submit">Login</v-btn>
+            </v-card-actions>
+          </v-card>
         </div>
-      </v-row>
-
-      <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
-      </div>
-
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
-    </v-card-text>
-
-    <v-divider class="mx-4 mb-1"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <div class="px-4">
-      <v-chip-group v-model="selection">
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </div>
-
-    <v-card-actions>
-      <v-btn
-        color="deep-purple-lighten-2"
-        variant="text"
-        @click="reserve"
-      >
-        Reserve
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const links = ref([
+  'Dashboard',
+  'Messages',
+  'Profile',
+  'Updates',
+])
+const tab = ref('mdi-home')
+</script>
+

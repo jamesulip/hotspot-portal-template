@@ -1,0 +1,56 @@
+{
+    "theme":{
+        "LoginButton":{
+            "textColor": "#000000",
+            "textFont": "Arial",
+            "textBold": true,
+            "textItalic": false,
+            "color": "#ffffff",
+            "text": "Login"
+        },
+        "input":{
+            "textColor": "#000000",
+            "textFont": "Arial",
+            "textBold": true,
+            "textItalic": false,
+            "Color": "#ffffff"
+        }
+    },
+    "logo": {
+        "isLogo": true,
+        "logo": "/logo.png",
+        "logoSize": 100,
+        "text": "Google",
+        "textSize": 20,
+        "textColor": "#000000",
+        "textFont": "Arial",
+        "textBold": true,
+        "textItalic": false
+    },
+    "background":{
+        "isBackground": true,
+        "background": "/bg.png",
+        "backgroundOpacity": 0.5,
+        "backgroundColor": "#000000"
+    },
+    "welcome_information":{
+        "isWelcomeInformation": true,
+        "text": "Welcome to Google",
+        "textSize": 20,
+        "textColor": "#000000",
+        "textFont": "Arial",
+        "textBold": true,
+        "textItalic": false
+    },
+    "terms_and_conditions":{
+        "isTermsAndConditions": true,
+        "text": "Terms and Conditions",
+        "textSize": 20,
+        "textColor": "#000000",
+        "textFont": "Arial",
+        "textBold": true,
+        "textItalic": false,
+        "url": "https://www.google.com"
+    }
+    
+}
