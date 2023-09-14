@@ -51,7 +51,7 @@
                     value: 'qr',
                   }
                 ]" :key="n.icon" :ripple="false" :text="n.text" centered>
-                  <v-icon start v-if="!n.icon == 'mdi-home'">
+                  <v-icon start v-if="!!n.icon && n.icon !== 'mdi-home'">
                     {{ n.icon }}
                   </v-icon>
                   {{ n.text }}
@@ -80,7 +80,7 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="primary" text block @click="submit">Login</v-btn>
+              <v-btn color="primary" text block >Login</v-btn>
             </v-card-actions>
           </v-card>
         </div>

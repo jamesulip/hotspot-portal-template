@@ -14,7 +14,6 @@ declare module 'vue' {
     AuthOtp: typeof import('./components/Auth/Otp.vue')['default']
     AuthQr: typeof import('./components/Auth/Qr.vue')['default']
     AuthVoucher: typeof import('./components/Auth/Voucher.vue')['default']
-    Form: typeof import('./components/Form.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TermsOfService: typeof import('./components/TermsOfService.vue')['default']
