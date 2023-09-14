@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card hidden>
         <v-card-text>
             <v-text-field hide-details variant="outlined" v-model="login" :rules="loginRules" label="Login" required></v-text-field>
         </v-card-text>

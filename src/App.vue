@@ -33,22 +33,22 @@
                   {
                     icon: 'mdi-home',
                     text: 'Free',
-                    value: 'mdi-home',
+                    value: 'free',
                   },
                   {
                     icon: 'mdi-account',
                     text: 'Login',
-                    value: 'mdi-account',
+                    value: 'login',
                   },
                   {
                     icon: 'mdi-ticket-percent',
                     text: 'Voucher',
-                    value: 'mdi-ticket-percent',
+                    value: 'voucher',
                   },
                   {
                     icon: 'mdi-qrcode',
                     text: 'QR',
-                    value: 'mdi-qrcode',
+                    value: 'qr',
                   }
                 ]" :key="n.icon" :ripple="false" :text="n.text" centered>
                   <v-icon start v-if="!n.icon == 'mdi-home'">
@@ -61,25 +61,17 @@
             </v-card-item>
 
             <v-window v-model="tab" an>
-              <v-window-item v-for="n in [
-                {
-                  icon: 'mdi-home',
-                  text: 'Free',
-                },
-                {
-                  icon: 'mdi-account',
-                  text: 'Login',
-                },
-                {
-                  icon: 'mdi-ticket-percent',
-                  text: 'Voucher',
-                },
-                {
-                  icon: 'mdi-qrcode',
-                  text: 'QR',
-                }
-              ]" :key="n.icon">
+              <v-window-item :key="'free'">
                 <AuthFree />
+              </v-window-item>
+              <v-window-item :key="'login'">
+                <AuthCredentials />
+              </v-window-item>
+              <v-window-item :key="'voucher'">
+                <AuthVoucher />
+              </v-window-item>
+              <v-window-item :key="'qr'">
+                <AuthQr />
               </v-window-item>
             </v-window>
 
