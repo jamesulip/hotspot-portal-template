@@ -1,5 +1,5 @@
 <template>
-    <v-card hidden>
+    <v-card style="visibility: hidden;height: 0px;">
         <v-card-text>
             <v-text-field hide-details variant="outlined" v-model="login"  label="Login" required></v-text-field>
         </v-card-text>

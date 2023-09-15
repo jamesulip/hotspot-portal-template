@@ -1,19 +1,19 @@
 {
     "theme":{
         "LoginButton":{
-            "textColor": "#000000",
+            "textColor": "#7E2020",
             "textFont": "Arial",
             "textBold": true,
             "textItalic": false,
-            "color": "#ffffff",
+            "color": "#7E2020",
             "text": "Login"
         },
         "input":{
-            "textColor": "#000000",
+            "textColor": "#7E2020",
             "textFont": "Arial",
             "textBold": true,
             "textItalic": false,
-            "Color": "#ffffff"
+            "Color": "#7E2020"
         }
     },
     "logo": {
@@ -22,22 +22,28 @@
         "logoSize": 100,
         "text": "Google",
         "textSize": 20,
-        "textColor": "#000000",
+        "textColor": "#7E2020",
         "textFont": "Arial",
         "textBold": true,
-        "textItalic": false
+        "textItalic": false,
+        "margin":{
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+        }
     },
     "background":{
         "isBackground": true,
         "background": "/bg.png",
         "backgroundOpacity": 0.5,
-        "backgroundColor": "#000000"
+        "backgroundColor": "#7E2020"
     },
     "welcome_information":{
         "isWelcomeInformation": true,
         "text": "Welcome to Google",
         "textSize": 20,
-        "textColor": "#000000",
+        "textColor": "#7E2020",
         "textFont": "Arial",
         "textBold": true,
         "textItalic": false
@@ -46,11 +52,65 @@
         "isTermsAndConditions": true,
         "text": "Terms and Conditions",
         "textSize": 20,
-        "textColor": "#000000",
+        "textColor": "#7E2020",
         "textFont": "Arial",
         "textBold": true,
         "textItalic": false,
         "url": "https://www.google.com"
+    },
+    "top_nav":{
+        "isTopNav": true,
+        "links":[
+            {
+                "text": "Menu 1",
+                "url": "https://www.google.com"
+            },
+            {
+                "text": "Dessert",
+                "url": "https://www.google.com"
+            },
+            {
+                "text": "Drinks",
+                "url": "https://www.google.com"
+            },
+            {
+                "text": "Menu 2",
+                "url": "https://www.google.com"
+            },
+            {
+                "text": "Menu 3",
+                "url": "https://www.google.com"
+            }
+        ]
+    },
+   
+    "authorization":{
+        "methods": [
+            {
+                "type": "free",
+                "enable": true,
+                "text": "Free",
+                "icon": "mdi-home"
+            },
+            {
+                "type": "login",
+                "enable": true,
+                "text": "Login",
+                "icon": "mdi-account"
+            },
+            {
+                "type": "voucher",
+                "enable": true,
+                "text": "Voucher",
+                "icon": "mdi-ticket-percent"
+            },
+            {
+                "type": "qr",
+                "enable": true,
+                "text": "QR",
+                "icon": "mdi-qrcode"
+            }
+        ]
+        
     }
-    
 }
