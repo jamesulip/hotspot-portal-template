@@ -67,7 +67,8 @@
 <script setup lang="ts">
 import { useAppStore } from '@/store/app';
 import { storeToRefs } from 'pinia';
-import { ref, watch } from 'vue';
+import { onMounted } from 'vue';
+import { ref } from 'vue';
 const { fetchSettings } = useAppStore()
 const { config } = storeToRefs(useAppStore())
 const logo = ref(null)
@@ -75,7 +76,9 @@ function updateLogo(e: any) {
     const file = e?.target?.files?.[0]
     config.value.logo.logo = URL.createObjectURL(file)
 }
-fetchSettings()
+onMounted(() => {
+    fetchSettings()
+})
 const fileRule =[
 (        value: string | any[]) => {
           return !value || !value.length || value[0].size < 2000000 || 'Avatar size should be less than 2 MB!'

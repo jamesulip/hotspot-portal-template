@@ -27,6 +27,7 @@
       data () {
         return {
           dialog: false,
+          checkbox: false,
         }
       },
     }
